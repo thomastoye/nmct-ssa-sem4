@@ -6,7 +6,7 @@ using System.Web;
 
 namespace nmct.ssa.labo1.oef2.Models.DAL
 {
-    public class ScoreContext
+    public class ScoreContext : DbContext
     {
         public DbSet<Competition> Competition { get; set; }
         public DbSet<Score> Score { get; set; }
