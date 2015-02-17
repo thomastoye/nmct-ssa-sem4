@@ -28,5 +28,19 @@ namespace nmct.ssa.labo1.oef2.Models
          *     }
          * }
          */
+
+        public Competition GetCompetition(int id)
+        {
+            using (ScoreContext context = new ScoreContext())
+            {
+                var query = (from c in context.Competition
+                                 .Include(c => c.Country)
+                                 .Include(s => s.Scores.Select(t => t.TeamA))
+                                 .Include(s => s.Scores.Select(t => t.TeamB))
+                             where c.Id == id
+                             select c);
+                return query.Single<Competition>();
+            }
+        }
     }
 }

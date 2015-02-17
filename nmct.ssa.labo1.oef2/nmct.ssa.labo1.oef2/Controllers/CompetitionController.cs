@@ -16,5 +16,12 @@ namespace nmct.ssa.labo1.oef2.Controllers
             List<Competition> competitions = repo.GetCompetitions();
             return View(competitions);
         }
+
+        public ActionResult Details(int id)
+        {
+            CompetitionRepository repo = new CompetitionRepository();
+            Competition competition = repo.GetCompetition(id);
+            return View(competition);
+        }
     }
 }
