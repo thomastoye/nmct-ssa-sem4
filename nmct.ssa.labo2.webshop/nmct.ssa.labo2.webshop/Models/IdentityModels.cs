@@ -25,6 +25,10 @@ namespace nmct.ssa.labo2.webshop.Models
         {
         }
 
+        public DbSet<Device> Devices { get; set; }
+        public DbSet<OS> OSes { get; set; }
+        public DbSet<ProgrammingFramework> ProgrammingFrameworks { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
