@@ -25,7 +25,8 @@ namespace nmct.ssa.labo2.webshop
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/metro-bootstrap.css"));
         }
     }
 }
