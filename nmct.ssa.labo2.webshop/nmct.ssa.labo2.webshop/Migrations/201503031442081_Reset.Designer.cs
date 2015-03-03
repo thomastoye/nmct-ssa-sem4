@@ -7,13 +7,13 @@ namespace nmct.ssa.labo2.webshop.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.1-30610")]
-    public sealed partial class updatemodels : IMigrationMetadata
+    public sealed partial class Reset : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(updatemodels));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Reset));
         
         string IMigrationMetadata.Id
         {
-            get { return "201502241308318_update models"; }
+            get { return "201503031442081_Reset"; }
         }
         
         string IMigrationMetadata.Source

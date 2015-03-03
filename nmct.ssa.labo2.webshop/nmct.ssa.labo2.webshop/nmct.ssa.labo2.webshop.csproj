@@ -186,21 +186,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\ApplicationRoles.cs" />
-    <Compile Include="Migrations\201502171542060_Initial migration.cs" />
-    <Compile Include="Migrations\201502171542060_Initial migration.Designer.cs">
-      <DependentUpon>201502171542060_Initial migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201502171604393_Add name.cs" />
-    <Compile Include="Migrations\201502171604393_Add name.Designer.cs">
-      <DependentUpon>201502171604393_Add name.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201502241308318_update models.cs" />
-    <Compile Include="Migrations\201502241308318_update models.Designer.cs">
-      <DependentUpon>201502241308318_update models.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201502241342484_add constraints.cs" />
-    <Compile Include="Migrations\201502241342484_add constraints.Designer.cs">
-      <DependentUpon>201502241342484_add constraints.cs</DependentUpon>
+    <Compile Include="Migrations\201503031442081_Reset.cs" />
+    <Compile Include="Migrations\201503031442081_Reset.Designer.cs">
+      <DependentUpon>201503031442081_Reset.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -316,6 +304,8 @@
     <Content Include="Content\metro-bootstrap\labels.less" />
     <Content Include="Content\metro-bootstrap\checkbox.less" />
     <Content Include="Content\metro-bootstrap\alerts.less" />
+    <None Include="Properties\PublishProfiles\myiotshop - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\myiotshop - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -370,27 +360,17 @@
     <Content Include="Views\Devices\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201502171542060_Initial migration.resx">
-      <DependentUpon>201502171542060_Initial migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201502171604393_Add name.resx">
-      <DependentUpon>201502171604393_Add name.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201502241308318_update models.resx">
-      <DependentUpon>201502241308318_update models.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201502241342484_add constraints.resx">
-      <DependentUpon>201502241342484_add constraints.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201503031442081_Reset.resx">
+      <DependentUpon>201503031442081_Reset.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
