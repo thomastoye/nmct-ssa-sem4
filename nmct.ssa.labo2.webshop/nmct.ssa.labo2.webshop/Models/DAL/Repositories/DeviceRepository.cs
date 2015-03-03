@@ -1,11 +1,12 @@
-﻿using System;
+﻿using nmct.ssa.labo2.webshop.Models.DAL.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
 namespace nmct.ssa.labo2.webshop.Models
 {
-    public class DeviceRepository
+    public class DeviceRepository : GenericRepository<Device>, IDeviceRepository
     {
 
         public List<Device> GetDevices()
@@ -23,16 +24,6 @@ namespace nmct.ssa.labo2.webshop.Models
             {
                 var query = (from c in context.Devices where c.ID == id select c);
                 return query.Single<Device>();
-            }
-        }
-
-        public int InsertDevice(Device dev)
-        {
-            using (ApplicationDbContext context = new ApplicationDbContext())
-            {
-                Device returned = context.Devices.Add(dev);
-                context.SaveChanges();
-                return returned.ID;
             }
         }
     }
