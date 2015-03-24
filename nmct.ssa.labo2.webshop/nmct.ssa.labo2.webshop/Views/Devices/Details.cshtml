@@ -60,6 +60,21 @@
 
     </dl>
 </div>
+
+@using (Html.BeginForm("AddToBasket", "Devices", FormMethod.Get))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Toevoegen aan winkelmandje</h4>
+
+        <input name="aantal" type="number"/>
+        <input name="productId" type="hidden" value="@Model.ID"/>
+
+        <button type="submit" value="Submit">Submit</button>
+    </div>
+}
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
     @Html.ActionLink("Back to List", "Index")

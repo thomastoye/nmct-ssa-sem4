@@ -114,5 +114,12 @@ namespace nmct.ssa.labo2.webshop.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        //[ValidateAntiForgeryToken]
+        public string AddToBasket(int aantal, int productId)
+        {
+            return "aantal " + aantal + " productid" + productId;
+        }
     }
 }
