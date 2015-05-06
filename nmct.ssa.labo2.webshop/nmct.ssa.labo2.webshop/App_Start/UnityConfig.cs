@@ -3,6 +3,7 @@ using Microsoft.Practices.Unity;
 using Unity.Mvc5;
 using nmct.ssa.labo2.webshop.Models;
 using nmct.ssa.labo2.webshop.Models.DAL.Repositories;
+using nmct.ssa.labo2.webshop.Services;
 
 namespace nmct.ssa.labo2.webshop
 {
@@ -20,7 +21,7 @@ namespace nmct.ssa.labo2.webshop
             container.RegisterType<IGenericRepository<ProgrammingFramework>, GenericRepository<ProgrammingFramework>>();
             container.RegisterType<IGenericRepository<OS>, GenericRepository<OS>>();
             container.RegisterType<IDeviceRepository, DeviceRepository>();
-            //container.RegisterType<IProductService, ProductService>();
+            container.RegisterType<IProductService, ProductService>();
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }

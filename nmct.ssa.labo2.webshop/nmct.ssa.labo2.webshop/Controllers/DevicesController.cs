@@ -8,26 +8,33 @@ using System.Web;
 using System.Web.Mvc;
 using nmct.ssa.labo2.webshop.Models;
 using nmct.ssa.labo2.webshop.Models.DAL.Repositories;
+using nmct.ssa.labo2.webshop.Services;
 
 namespace nmct.ssa.labo2.webshop.Controllers
 {
     public class DevicesController : Controller
     {
+        private IProductService ps;
+
+        public DevicesController(IProductService ps)
+        {
+            this.ps = ps;
+        }
 
         // GET: Devices
-        public ActionResult Index(ApplicationDbContext db)
+        public ActionResult Index()
         {
-            return View(db.Devices.ToList());
+            return View(ps.GetAllDevices());
         }
 
         // GET: Devices/Details/5
-        public ActionResult Details(ApplicationDbContext db, int? id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Device device = db.Devices.Find(id);
+            Device device = ps.GetDevice(id.Value);
             if (device == null)
             {
                 return HttpNotFound();
@@ -36,7 +43,7 @@ namespace nmct.ssa.labo2.webshop.Controllers
         }
 
         // GET: Devices/Create
-        public ActionResult Create(ApplicationDbContext db)
+        public ActionResult Create()
         {
             return View();
         }

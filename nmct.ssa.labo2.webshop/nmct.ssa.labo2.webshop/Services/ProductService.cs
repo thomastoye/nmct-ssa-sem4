@@ -7,7 +7,7 @@ using System.Web;
 
 namespace nmct.ssa.labo2.webshop.Services
 {
-    public class ProductService
+    public class ProductService : nmct.ssa.labo2.webshop.Services.IProductService
     {
         private IGenericRepository<OS> repoOS;
         private IGenericRepository<ProgrammingFramework> repoFramework;
@@ -33,6 +33,11 @@ namespace nmct.ssa.labo2.webshop.Services
         public List<ProgrammingFramework> GetProgrammingFrameworks()
         {
             return repoFramework.All().ToList();
+        }
+
+        public IEnumerable<Device> GetAllDevices()
+        {
+            return repoDevice.All();
         }
 
 
